@@ -1,18 +1,17 @@
 import socket
 import sys
 import json
-from constantsnutils.constants import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
-    PRESENCE, TIME, USER, ERROR, DEFAULT_PORT
-from constantsnutils.utils import make_message, send_message
+from constantsnutils import constants
+from constantsnutils import utils
 
 
 def process_client_message(message):
-    if ACTION in message and message[ACTION] == PRESENCE and TIME in message \
-            and USER in message and message[USER][ACCOUNT_NAME] == 'Guest':
-        return {RESPONSE: 200}
+    if constants.ACTION in message and message[constants.ACTION] == constants.PRESENCE and constants.TIME in message \
+            and constants.USER in message and message[constants.USER][constants.ACCOUNT_NAME] == 'Guest':
+        return {constants.RESPONSE: 200}
     return {
-        RESPONSE: 400,
-        ERROR: 'Bad Request'
+        constants.RESPONSE: 400,
+        constants.ERROR: 'Bad Request'
     }
 
 
@@ -21,7 +20,7 @@ def main():
         if '-p' in sys.argv:
             listen_port = int(sys.argv[sys.argv.index('-p') + 1])
         else:
-            listen_port = DEFAULT_PORT
+            listen_port = constants.DEFAULT_PORT
         if listen_port < 1024 or listen_port > 65535:
             raise ValueError
     except IndexError:
@@ -48,15 +47,15 @@ def main():
     transport.bind((listen_address, listen_port))
 
 
-    transport.listen(MAX_CONNECTIONS)
+    transport.listen(constants.MAX_CONNECTIONS)
 
     while True:
         client, client_address = transport.accept()
         try:
-            message_from_client = make_message(client)
+            message_from_client = utils.make_message(client)
             print(message_from_client)
             response = process_client_message(message_from_client)
-            send_message(client, response)
+            utils.send_message(client, response)
             client.close()
         except (ValueError, json.JSONDecodeError):
             print('Некорретное сообщение от клиента.')
