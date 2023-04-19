@@ -1,0 +1,25 @@
+2023-04-18 21:44:54,239 CRITICAL client_log_config.py Критическая ошибка
+2023-04-18 21:44:54,240 ERROR client_log_config.py Ошибка
+2023-04-18 21:44:54,240 DEBUG client_log_config.py Отладочная информация
+2023-04-18 21:44:54,240 INFO client_log_config.py Информационное сообщение
+
+2023-04-18 22:05:00,049 CRITICAL client_log_config.py Критическая ошибка
+2023-04-18 22:05:00,049 ERROR client_log_config.py Ошибка
+2023-04-18 22:05:00,049 DEBUG client_log_config.py Отладочная информация
+2023-04-18 22:05:00,049 INFO client_log_config.py Информационное сообщение
+2023-04-18 22:06:24,087 CRITICAL client_log_config.py Критическая ошибка
+2023-04-18 22:06:24,088 ERROR client_log_config.py Ошибка
+2023-04-18 22:06:24,088 DEBUG client_log_config.py Отладочная информация
+2023-04-18 22:06:24,088 INFO client_log_config.py Информационное сообщение
+2023-04-18 22:06:35,764 CRITICAL client_log_config.py Критическая ошибка
+2023-04-18 22:06:35,765 ERROR client_log_config.py Ошибка
+2023-04-18 22:06:35,765 DEBUG client_log_config.py Отладочная информация
+2023-04-18 22:06:35,765 INFO client_log_config.py Информационное сообщение
+2023-04-19 15:54:22,870 CRITICAL client_log_config.py Критическая ошибка
+2023-04-19 15:54:22,871 ERROR client_log_config.py Ошибка
+2023-04-19 15:54:22,871 DEBUG client_log_config.py Отладочная информация
+2023-04-19 15:54:22,871 INFO client_log_config.py Информационное сообщение
+2023-04-19 16:13:47,714 CRITICAL client_log_config.py Критическая ошибка
+2023-04-19 16:13:47,715 ERROR client_log_config.py Ошибка
+2023-04-19 16:13:47,715 DEBUG client_log_config.py Отладочная информация
+2023-04-19 16:13:47,715 INFO client_log_config.py Информационное сообщение
