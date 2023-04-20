@@ -1,13 +1,8 @@
-2023-04-18 21:48:56,605 CRITICAL server_log_config.py Критическая ошибка
-2023-04-18 21:48:56,606 ERROR server_log_config.py Ошибка
-2023-04-18 21:48:56,607 DEBUG server_log_config.py Отладочная информация
-2023-04-18 21:48:56,607 INFO server_log_config.py Информационное сообщение
-
-2023-04-19 15:54:33,160 CRITICAL server_log_config.py Критическая ошибка
-2023-04-19 15:54:33,161 ERROR server_log_config.py Ошибка
-2023-04-19 15:54:33,161 DEBUG server_log_config.py Отладочная информация
-2023-04-19 15:54:33,161 INFO server_log_config.py Информационное сообщение
-2023-04-19 16:13:27,875 CRITICAL server_log_config.py Критическая ошибка
-2023-04-19 16:13:27,876 ERROR server_log_config.py Ошибка
-2023-04-19 16:13:27,877 DEBUG server_log_config.py Отладочная информация
-2023-04-19 16:13:27,877 INFO server_log_config.py Информационное сообщение
+2023-04-20 20:46:08,655 CRITICAL server_log_config.py Критическая ошибка
+2023-04-20 20:46:08,656 ERROR server_log_config.py Ошибка
+2023-04-20 20:46:08,657 DEBUG server_log_config.py Отладочная информация
+2023-04-20 20:46:08,657 INFO server_log_config.py Информационное сообщение
+2023-04-20 21:23:29,325 CRITICAL server_log_config.py Критическая ошибка
+2023-04-20 21:23:29,326 ERROR server_log_config.py Ошибка
+2023-04-20 21:23:29,326 DEBUG server_log_config.py Отладочная информация
+2023-04-20 21:23:29,326 INFO server_log_config.py Информационное сообщение
