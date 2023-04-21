@@ -1,0 +1,8 @@
+2023-04-20 20:46:08,655 CRITICAL server_log_config.py Критическая ошибка
+2023-04-20 20:46:08,656 ERROR server_log_config.py Ошибка
+2023-04-20 20:46:08,657 DEBUG server_log_config.py Отладочная информация
+2023-04-20 20:46:08,657 INFO server_log_config.py Информационное сообщение
+2023-04-20 21:23:29,325 CRITICAL server_log_config.py Критическая ошибка
+2023-04-20 21:23:29,326 ERROR server_log_config.py Ошибка
+2023-04-20 21:23:29,326 DEBUG server_log_config.py Отладочная информация
+2023-04-20 21:23:29,326 INFO server_log_config.py Информационное сообщение
