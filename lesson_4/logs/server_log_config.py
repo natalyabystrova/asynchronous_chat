@@ -2,7 +2,6 @@ import sys
 import os
 import logging
 import logging.handlers
-from lesson_4.constantsnutils import constants
 sys.path.append('../')
 
 SERVER_FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(filename)s %(message)s')
@@ -19,7 +18,7 @@ LOG_FILE.setFormatter(SERVER_FORMATTER)
 LOGGER = logging.getLogger('server')
 LOGGER.addHandler(STREAM_HANDLER)
 LOGGER.addHandler(LOG_FILE)
-LOGGER.setLevel(constants.LOGGING_LEVEL)
+LOGGER.setLevel(logging.DEBUG)
 
 if __name__ == '__main__':
     LOGGER.critical('Критическая ошибка')
