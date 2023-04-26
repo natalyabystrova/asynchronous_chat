@@ -13,6 +13,38 @@ from decos import log
 
 LOGGER = logging.getLogger('client')
 
+@log
+def message_from_server(message):
+    """Функция - обработчик сообщений других пользователей, поступающих с сервера"""
+    if constants.ACTION in message and message[constants.ACTION] == constants.MESSAGE and \
+            constants.SENDER in message and constants.MESSAGE_TEXT in message:
+        print(f'Получено сообщение от пользователя '
+              f'{message[constants.SENDER]}:\n{message[constants.MESSAGE_TEXT]}')
+        LOGGER.info(f'Получено сообщение от пользователя '
+                    f'{message[constants.SENDER]}:\n{message[constants.MESSAGE_TEXT]}')
+    else:
+        LOGGER.error(f'Получено некорректное сообщение с сервера: {message}')
+
+@log
+def create_message(sock, account_name='Guest'):
+    """Функция запрашивает текст сообщения и возвращает его.
+    Так же завершает работу при вводе подобной комманды
+    """
+    message = input('Введите сообщение для отправки или \'!!!\' для завершения работы: ')
+    if message == '!!!':
+        sock.close()
+        LOGGER.info('Завершение работы по команде пользователя.')
+        print('Спасибо за использование нашего сервиса!')
+        sys.exit(0)
+    message_dict = {
+        constants.ACTION: constants.MESSAGE,
+        constants.TIME: time.time(),
+        constants.ACCOUNT_NAME: account_name,
+        constants.MESSAGE_TEXT: message
+    }
+    LOGGER.debug(f'Сформирован словарь сообщения: {message_dict}')
+    return message_dict
+
 
 @log
 def create_presence(account_name='Guest'):
