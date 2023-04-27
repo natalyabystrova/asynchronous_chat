@@ -1,3 +1,5 @@
+"""Программа-клиент"""
+
 import sys
 import json
 import socket
@@ -5,11 +7,11 @@ import time
 import argparse
 import logging
 import threading
-import logs.client_log_config
-from constantsnutils.constants import DEFAULT_PORT, DEFAULT_IP_ADDRESS, ACTION, \
+import logs.config_client_log
+from common.variables import DEFAULT_PORT, DEFAULT_IP_ADDRESS, ACTION, \
     TIME, USER, ACCOUNT_NAME, SENDER, PRESENCE, RESPONSE, \
     ERROR, MESSAGE, MESSAGE_TEXT, DESTINATION, EXIT
-from constantsnutils.utils import make_message, send_message
+from common.utils import get_message, send_message
 from errors import IncorrectDataRecivedError, ReqFieldMissingError, ServerError
 from decos import log
 
@@ -32,7 +34,7 @@ def message_from_server(sock, my_username):
     """Функция - обработчик сообщений других пользователей, поступающих с сервера"""
     while True:
         try:
-            message = make_message(sock)
+            message = get_message(sock)
             if ACTION in message and message[ACTION] == MESSAGE and \
                     SENDER in message and DESTINATION in message \
                     and MESSAGE_TEXT in message and message[DESTINATION] == my_username:
@@ -179,7 +181,7 @@ def main():
         transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         transport.connect((server_address, server_port))
         send_message(transport, create_presence(client_name))
-        answer = process_response_ans(make_message(transport))
+        answer = process_response_ans(get_message(transport))
         LOGGER.info(f'Установлено соединение с сервером. Ответ сервера: {answer}')
         print(f'Установлено соединение с сервером.')
     except json.JSONDecodeError:
