@@ -1,13 +1,15 @@
+"""Программа-сервер"""
+
 import sys
 import socket
 import argparse
 import logging
 import select
-import logs.server_log_config
-from constantsnutils.constants import DEFAULT_PORT, MAX_CONNECTIONS, ACTION, TIME, \
+import logs.config_server_log
+from common.variables import DEFAULT_PORT, MAX_CONNECTIONS, ACTION, TIME, \
     USER, ACCOUNT_NAME, SENDER, PRESENCE, ERROR, MESSAGE, \
     MESSAGE_TEXT, RESPONSE_400, DESTINATION, RESPONSE_200, EXIT
-from constantsnutils.utils import make_message, send_message
+from common.utils import get_message, send_message
 from decos import log
 
 # Инициализация логирования сервера.
@@ -155,7 +157,7 @@ def main():
         if recv_data_lst:
             for client_with_message in recv_data_lst:
                 try:
-                    process_client_message(make_message(client_with_message),
+                    process_client_message(get_message(client_with_message),
                                            messages, client_with_message, clients, names)
                 except Exception:
                     LOGGER.info(f'Клиент {client_with_message.getpeername()} '

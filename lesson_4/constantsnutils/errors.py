@@ -1,3 +1,6 @@
+"""Классы-исключения"""
+
+
 class IncorrectDataRecivedError(Exception):
     """Исключение  - некорректные данные получены от сокета"""
     def __str__(self):
