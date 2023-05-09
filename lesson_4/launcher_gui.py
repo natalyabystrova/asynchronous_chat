@@ -1,6 +1,7 @@
 import subprocess
 from tkinter import Entry, Button, Tk, Label, messagebox, StringVar
 from os import path
+import sys
 
 from constantsnutils.constants import DEFAULT_IP_ADDRESS, DEFAULT_PORT
 
@@ -52,7 +53,7 @@ class Launcher:
         self.processes.append(subprocess.Popen(f"open -n -a Terminal.app '{pathToScriptServer}'", shell=True))
 
         for i in range(int(self.clients.get())):
-            self.processes.append(subprocess.Popen(f"open -n -a Terminal.app '{pathToScriptServer}'", shell=True))
+            self.processes.append(subprocess.Popen([sys.executable, pathToScriptClients]))
 
     def stop(self):
         while self.processes:
