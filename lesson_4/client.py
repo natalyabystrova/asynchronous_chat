@@ -174,7 +174,7 @@ def main():
         transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         transport.connect((server_address, server_port))
         send_message(transport, create_presence(client_name))
-        answer = process_response_ans(get_message(transport))
+        answer = process_response_ans(make_message(transport))
         logger.info(f'Установлено соединение с сервером. Ответ сервера: {answer}')
         print(f'Установлено соединение с сервером.')
     except json.JSONDecodeError:
