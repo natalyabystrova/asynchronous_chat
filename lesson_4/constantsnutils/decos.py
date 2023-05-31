@@ -1,6 +1,6 @@
 import sys
-import logs.server_log_config
-import logs.client_log_config
+from lesson_4.logs import server_log_config
+from lesson_4.logs import client_log_config
 import logging
 
 # метод определения модуля, источника запуска.

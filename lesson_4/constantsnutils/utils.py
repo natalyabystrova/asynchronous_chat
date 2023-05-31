@@ -1,8 +1,8 @@
 import json
 import sys
 sys.path.append('../')
-import decos
-from variables import *
+from lesson_4.constantsnutils import decos
+from lesson_4.constantsnutils.variables import *
 
 
 
