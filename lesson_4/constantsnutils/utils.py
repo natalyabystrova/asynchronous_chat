@@ -2,7 +2,7 @@ import json
 import sys
 sys.path.append('../')
 import decos
-from variables import *
+from .variables import *
 
 
 
